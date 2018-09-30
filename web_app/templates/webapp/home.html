@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bagrat Karyan</title>
+    <meta name="description" content="Bagrat Karyan - CV">
+    <link href="{% static "images/BagratKaryan.ico" %}" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/aos.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/main_style.css" %}">
+    <style>
+        #follow {margin-top: 50px;}
+        #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: darkgreen;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #42830b;
+    }
+
+    #myImg{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    }
+
+    {##myImg, #myImg1:hover {opacity: 0.7;}#} /* is shadow the image*/
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 80px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        {#display: block;#}
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)}
+        to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 55px;
+        right: 45px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+    </style>
+  </head>
+<body id="top" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <header>
+      <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+          <div class="container">
+            <div class="navbar-translate"><a class="navbar-brand" href="/home" rel="tooltip" data-original-title="" title="">BAGRAT KARYAN</a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Education</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Experience
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown1">
+                      <a class="dropdown-item" href="#personal experience">PERSONAL EXPERIENCE</a>
+                      <a class="dropdown-item" href="#professional experience">PROFESSIONAL EXPERIENCE</a>
+{#                      <a class="dropdown-item" href="#experience">Experience</a>#}
+                        <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#certifications">CERTIFICATIONS</a>
+                      <a class="dropdown-item" href="#publications">PUBLICATIONS</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Applications
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown2">
+                      <a class="dropdown-item" href="#millionaire">Millionaire</a>
+                      <a class="dropdown-item" href="#tic_tac_toe">Tic Tac Toe</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#atm">ATM</a>
+{#                      <a class="dropdown-item" href="#experience">Experience</a>#}
+                    </div>
+                  </li>
+{#                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>#}
+{#                <li class="nav-item"><a class="nav-link smooth-scroll" href="#certifications">Certifications</a></li>#}
+{#                <li class="nav-item"><a class="nav-link smooth-scroll" href="#publications">Publications</a></li>#}
+{#                <li class="nav-item"><a class="nav-link smooth-scroll" href="{% url 'applications' %}">Applications</a></li>#}
+{#                <li class="nav-item"><a class="nav-link smooth-scroll" href="#applications">Applications</a></li>#}
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Photos</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+              </ul>
+{#                  <form class="form-inline">#}
+{#                    <input class="form-control mr-sm-0" type="search" placeholder="Search" aria-label="Search">#}
+{#                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+{#                  </form>#}
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="page-content">
+      <div>
+    <div class="profile-page">
+      <div class="wrapper">
+        <div class="page-header page-header-small" filter-color="green">
+          <div class="page-header-image" data-parallax="true" style="background-image: url('{% static "images/bridge.jpg" %}'); background-repeat: no-repeat;"></div>
+          <div class="container">
+            <div class="content-center">
+              <div class="cc-profile-image"><a href="#"><img src="{% static "images/BagratKaryan.jpg" %}" alt="Image"></a></div>
+              <div class="h2 title">Bagrat Karyan</div>
+                <h5 class="category text-white">Software Developer</h5><a class="btn btn-primary smooth-scroll mr-2 aos-init aos-animate" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Send Email</a>
+                <a class="btn btn-primary smooth-scroll mr-2 aos-init aos-animate" href="{% static "pdf/BagratKaryan.pdf" %}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor" download=""><i class="fa fa-download"></i>&nbsp;Download PDF</a>
+                <h5 id="follow">Follow Me</h5>
+            </div>
+          </div>
+          <div class="section">
+            <div class="container">
+              <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.linkedin.com/in/bagrat-karyan-12b039151/" target="_blank" rel="tooltip" title="" data-original-title="LinkedIn"><i class="fa fa-linkedin"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.facebook.com/karbag89" target="_blank" rel="tooltip" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://twitter.com/Bagrat99911292?lang=en" target="_blank" rel="tooltip" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://plus.google.com/u/0/100170432753400412861" target="_blank" rel="tooltip" title="" data-original-title="Google+"><i class="fa fa-google-plus"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.instagram.com/bagratkaryan/" target="_blank" rel="tooltip" target="_blank" title="" data-original-title="Instagram"><i class="fa fa-instagram"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="about">
+      <div class="container">
+        <div class="card aos-init aos-animate" data-aos="fade-up" data-aos-offset="10">
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div class="card-body">
+                <div class="h4 mt-0 title">About Me</div>
+                <p style="text-indent: 15px; text-align: justify;"> High energy, responsible, proactive Python developer (including PM skills).</p>
+                <p style="text-indent: 15px; text-align: justify;"> Good communication skills for inter-team with other related development teams, such as Product Owners and Group Managers. </p>
+                  <p style="text-indent: 15px; text-align: justify;">I always strive to gain new knowledge.</p>
+                  <p style="text-indent: 15px; text-align: justify;">Group leader including more than 15 members of various specialities (LabVIEW software developers, circuit developers, constructors, quality assurance engineers, technical writers).</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card-body">
+                <div class="h4 mt-0 title">Information</div>
+                <div class="row">
+                  <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+                  <div class="col-sm-8">29</div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-sm-4"><strong class="text-uppercase">E-mail:</strong></div>
+                  <div class="col-sm-8">bagrat.karyan@gmail.com</div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+                  <div class="col-sm-8">+374 77 529-507</div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
+                  <div class="col-sm-8">39 Komitas, Yerevan, Armenia</div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-sm-4"><strong class="text-uppercase">Languages:</strong></div>
+                  <div class="col-sm-8">Armenian, Russian, English</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="skill">
+      <div class="container">
+        <div class="h4 text-center mb-4 title">Skills</div>
+        <div class="card aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+          <div class="card-body">
+              <div class="row">
+              <div class="col-md-6">
+                <div class="progress-container progress-primary"><span class="progress-badge">Python</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-primary aos-init" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div><span class="progress-value">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="progress-container progress-primary"><span class="progress-badge">LabVIEW, LabVIEW FPGA</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-primary aos-init" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div><span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="progress-container progress-primary"><span class="progress-badge">Django (HTML, CSS, JS, DOM, jQuery)</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-primary aos-init" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">80%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="progress-container progress-primary"><span class="progress-badge">Git, GitHub</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-primary aos-init" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div><span class="progress-value">65%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="progress-container progress-primary"><span class="progress-badge">OOP, Database, JIRA</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-primary aos-init" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div><span class="progress-value">85%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="progress-container progress-primary"><span class="progress-badge">Windows/MS Office / Project / Visio</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-primary aos-init" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div><span class="progress-value">100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="progress-container progress-primary"><span class="progress-badge">Java SE, Machine Learning</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-primary aos-init" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 55%;"></div><span class="progress-value">55%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="progress-container progress-primary"><span class="progress-badge">Unix/Linux, Bash/Shell</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-primary aos-init" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div><span class="progress-value">50%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="personal experience">
+      <div class="container cc-experience">
+        <div class="h4 text-center mb-4 title">Personal Experience</div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+
+                <div class="h5">Python Project 1</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">UDP Group Chat without threads</div>
+                  <p>UDP group chat without threads. Wrote a script “gchat.py” such that when it is called with an argument, which must be an IP address of a server, it acts as a client, and when it is called without an argument, it acts as a server. Both, the client and the server, display every UDP packet coming from the network as a text with a suffix indicating the source, such as “Hello there! by ('154.38.181.152', 12345)”. Whatever text the server receives from keyboard, it transmits the text to all its clients. Whenever the server receives a message from a network, it retransmits the message to all other clients (except to the client where from the message is received). Whenever someone sends a message to the server, the server considers it as a new client.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+                <div class="h5">Python Project 2</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">Millionaire Game with UI</div>
+                  <p>Developed “Millionaire” game using “tkinter” library for UI creation, and all data stored in Database with dynamic path.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+                <div class="h5">Python Project 3</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">ATM with UI</div>
+                  <p>The ATM controller simulates the control system of an Automated Teller Machine. The user interacts with controls and indicators on the front panel to perform common ATM functions such as deposit funds, withdraw funds, and inquire about the balance of funds from the user account.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <div class="section" id="professional experience">
+      <div class="container cc-experience">
+        <div class="h4 text-center mb-4 title">Professional Experience</div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+                <div class="h5">OLYMP Engineering LLC</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">Team Leader</div>
+                  <p>April 2016 - till now</p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+                <div class="h5">OLYMP Engineering LLC</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">Hardware Programming and Testing</div>
+                   <p>March 2014 - April 2016</p>
+              </div>
+            </div>
+          </div>
+         </div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+                <div class="h5">OLYMP Engineering LLC</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">LabVIEW Developer</div>
+                   <p>August 2012 - March 2014</p>
+              </div>
+            </div>
+          </div>
+         </div>
+           <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+                <div class="h5">Ani Electronics</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">Heat Sensor Sampling Manager</div>
+                  <p>September 2011 - December 2011</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="certifications">
+      <div class="container cc-experience">
+        <div class="h4 text-center mb-4 title">Certifications</div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+                <div class="h5">CLA</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">Certified LabVIEW Architect (CLA)</div>
+                  <p>September 2017 - September 2021</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="section" id="publications">
+      <div class="container cc-experience">
+        <div class="h4 text-center mb-4 title">Publications</div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-experience-header">
+                <div class="h5">SDCS</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">“Simulation of digital communication systems of linear codes”, H. Gomtsyan, B. Karyan, «ВЕСТНИК РАУ» - 2014</div>
+                  <p>October 2014</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="education">
+      <div class="container cc-education">
+        <div class="h4 text-center mb-4 title">Education</div>
+      <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-education-header">
+                <div class="h5">University</div><br/>
+                <div class="h5"> Master’s degree</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">State Engineering University of Armenia</div><br/>
+                  <div class="h5">Department of Radio Engineering and Communication Systems</div><br/>
+    {#              <div class="h5">Specialization: Radio Engineering </div><br/>#}
+                <p>September 2011 - June 2013</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-education-header">
+                <div class="h5">Military Service</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">Military service and training awards.</div><br/>
+                <p>July 2009 - July 2011</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-education-header">
+                <div class="h5">University</div><br/>
+                <div class="h5"> Bachelor of Science</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">State Engineering University of Armenia</div><br/>
+                  <div class="h5">Department of Radio Engineering and Communication Systems</div><br/>
+    {#              <div class="h5">Specialization: Radio Engineering </div><br/>#}
+                <p>September 2005 - June 2009</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body cc-education-header">
+                <div class="h5">School</div>
+              </div>
+            </div>
+            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+              <div class="card-body">
+                <div class="h5">Secondary school of Berdavan Tavush, Armenia </div>
+                <br/><p>September 1995 - May 2005</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{#<div class="section" id="applications">#}
+{#  <div class="container cc-experience">#}
+      <div class="h4 text-center mb-4 title">Applications</div>
+{#        <div class="card1">#}
+            <div class="row1">
+                <div class="col-lg-12 bg-primary aos-init" data-aos="fade-right1" data-aos-offset="50" data-aos-duration="500">
+                  <div class="card-body">
+                    <div class="section" id="millionaire">
+                      <div class="container cc-experience">
+{#                        <div class="h4 text-center mb-4 title">Millionaire</div>#}
+                        <div class="card">
+                          <div class="row">
+                            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                              <div class="card-body cc-experience-header">
+{#                                <div class="h5">Who Wants</div>#}
+                                <div class="h5">Millionaire</div>
+{#                                <div class="h5">Millionaire?</div>#}
+                              </div>
+                            </div>
+                            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                              <div class="card-body">
+                                <div class="h5">A group of contestants on each episode play a preliminary round called "Fastest Finger First". Who Wants to Be a Millionaire (often informally called Millionaire[note 1]) is an American television game show based on the same-titled British program and developed for the United States by Michael Davies. The show features a quiz competition in which contestants attempt to win a top prize of $1,000,000 by answering a series of multiple-choice questions of increasing difficulty (although, for a time, most of the questions were of random difficulty). The program has endured as one of the longest-running and most successful international variants in the Who Wants to Be a Millionaire? franchise.</div>
+                                  <br/><a class="btn btn-primary smooth-scroll mr-2 aos-init aos-animate" href="#tic_tac_toe" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Coming Soon</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="section" id="tic_tac_toe">
+                      <div class="container cc-experience">
+{#                        <div class="h4 text-center mb-4 title">Tic Tac Toe</div>#}
+                        <div class="card">
+                          <div class="row">
+                            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                              <div class="card-body cc-experience-header">
+                                <div class="h5">Tic</div>
+                                <div class="h5">Tac</div>
+                                <div class="h5">Toe</div>
+                              </div>
+                            </div>
+                            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                              <div class="card-body">
+                                <div class="h5">The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.</div>
+                                  <br/><a class="btn btn-primary smooth-scroll mr-2 aos-init aos-animate" href="{% url 'tic_tac_toe' %}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Start Game</a>
+{#                                  <br/><a class="btn btn-primary smooth-scroll mr-2 aos-init aos-animate" href="#atm" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Coming Soon</a>#}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="section" id="atm">
+                      <div class="container cc-experience">
+{#                        <div class="h4 text-center mb-4 title">ATM</div>#}
+                        <div class="card">
+                          <div class="row">
+                            <div class="col-md-3 bg-primary aos-init" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                              <div class="card-body cc-experience-header">
+                                <div class="h5">Automated</div>
+                                <div class="h5">Teller</div>
+                                <div class="h5">Machine</div>
+                                <div class="h5">(ATM)</div>
+                              </div>
+                            </div>
+                            <div class="col-md-9 aos-init" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                              <div class="card-body">
+                                <div class="h5">ATM is an electronic telecommunications device that perform financial transactions. An automated teller machine (ATM) is an electronic telecommunications device that enables customers of financial institutions to perform financial transactions, such as cash withdrawals, deposits, transfer funds, or obtaining account information, at any time and without the need for direct interaction with bank staff.</div>
+{#                                  <br/><a class="btn btn-primary smooth-scroll mr-2 aos-init aos-animate" href="{% url 'atm' %}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Start Transactions</a>#}
+                                  <br/><a class="btn btn-primary smooth-scroll mr-2 aos-init aos-animate" href="#portfolio" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Coming Soon</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{#    </div>#}
+{#  </div>#}
+</div>
+
+
+
+    <div class="section" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="h4 text-center mb-4 title">Photos</div>
+            <div class="nav-align-center">
+            </div>
+          </div>
+        </div>
+        <div class="tab-content gallery mt-5">
+          <div class="tab-pane active" id="web-development">
+            <div class="ml-auto mr-auto">
+              <div class="row">
+                <div class="col-md-6">
+{#                  <div class="cc-porfolio-image img-raised aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="https://www.facebook.com/photo.php?fbid=1598664883565653&set=a.301617543270400&type=3&theater" target="_blank">#}
+                  <div class="cc-porfolio-image img-raised aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a target="_blank">
+                      <figure class="cc-effect"><img src="{% static "images/Bagrat-1.jpg" %}" alt="In Tbilisi" id="myImg">
+
+                      </figure></a></div>
+{#                  <div class="cc-porfolio-image img-raised aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="https://www.facebook.com/photo.php?fbid=1582447968520678&set=a.103477983084358&type=3&theater" target="_blank">#}
+                  <div class="cc-porfolio-image img-raised aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a target="_blank">
+                      <figure class="cc-effect"><img src="{% static "images/Bagrat-3.jpg" %}" alt="3" id="myImg">
+
+                      </figure></a></div>
+                </div>
+                <div class="col-md-6">
+{#                  <div class="cc-porfolio-image img-raised aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="https://www.facebook.com/photo.php?fbid=1730514910371999&set=t.100002664699732&type=3&theater" target="_blank">#}
+                  <div class="cc-porfolio-image img-raised aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a target="_blank">
+                      <figure class="cc-effect"><img src="{% static "images/Bagrat-2.jpg" %}" alt="2" id="myImg">
+
+
+                      </figure></a></div>
+{#                  <div class="cc-porfolio-image img-raised aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="https://www.facebook.com/photo.php?fbid=1546740962091379&set=ms.c.eJxFjtsNBEEIwzpaJTPh1X9jp2UF92s5Bpo8hPKD4o16~_AGT6ShMAxwNlAOiGpz~%3BJN6GOAbhbeCMkZVhCVtw8wXEHaDbE7dtsCfCAKI~%3BXQNhfRbYK2qjuFF1o~_IHVx8v~%3Bg~-~-.bps.a.1546740288758113&type=3&theater" target="_blank">#}
+                  <div class="cc-porfolio-image img-raised aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a target="_blank">
+                      <figure class="cc-effect"><img src="{% static "images/Bagrat-4.jpg" %}" alt="4" id="myImg">
+
+                      </figure></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+{#      <img class="modal-content" id="img01">#}
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="cc-contact-information">
+        <div class="container">
+          <div class="cc-contact">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="card mb-0 aos-init" data-aos="zoom-in">
+                  <div class="h4 text-center title">Contact Me</div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card-body">
+    {#                    <form action="http://mycv.am/filesaramavagyan/contactform/data.php" method="post" role="form" class="contactForm">#}
+{#                        <form action="http://mycv.am/filesaramavagyan/contactform/data.php" method="post" role="form" class="contactForm">#}
+                          <div class="p pb-3"><strong>Fill the fields</strong></div>
+                          <div class="row mb-3">
+                            <div class="col">
+                              <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                                <input class="form-control" type="text" name="name" placeholder="Name Surname" required="required">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col">
+                              <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
+                                <input class="form-control" type="text" name="subject" placeholder="Topic" required="required">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col">
+                              <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                <input class="form-control" type="email" name="email" placeholder="E-mail" required="required">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <div class="col">
+                              <div class="form-group">
+                                <textarea class="form-control" name="message" placeholder="Leave me a message" required="required"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <button class="btn btn-primary" type="submit">Send</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body">
+                        <p class="mb-0"><strong>Address </strong></p>
+                        <p class="pb-2">39 Komitas, Yerevan, Armenia</p>
+                        <p class="mb-0"><strong>Phone</strong></p>
+                        <p class="pb-2">+374 77 529-507</p>
+                        <p class="mb-0"><strong>E-mail</strong></p>
+                        <p>bagrat.karyan@gmail.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <footer class="footer">
+          <div class="container text-center"><a class="cc-linkedin btn btn-link" href="https://www.linkedin.com/in/bagrat-karyan-12b039151/" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a><a class="cc-facebook btn btn-link" href="https://www.facebook.com/karbag89" target="_blank"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="https://twitter.com/Bagrat99911292?lang=en" target="_blank"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="https://plus.google.com/u/0/100170432753400412861" target="_blank"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href="https://www.instagram.com/bagratkaryan/" target="_blank"><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a></div>
+          <div class="h4 title text-center">Bagrat Karyan</div>
+          <div class="text-center text-muted">
+                © Copyright 2018 <a href="http://bagrat.karyan.com" target="_blank"><strong>Bagrat Karyan</strong></a>  |  All Rights Reserved Terms of Use  |  Privacy Policy<br>
+                <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
+                  <p style="margin: 0; font-family: 'Parisienne', cursive; font-size: 16px; color: black; font-weight: bold;">Designed and Developed By</p>
+                        <a href="#" target="_blank"><p style="margin: 0; font-family: 'Parisienne', cursive; font-size: 16px; color: black; font-weight: bold;" class="pb-2">Bagrat Karyan</p></a>
+          </div>
+        </footer>
+        <script src="{% static "js/jquery.3.2.1.min.js" %}"></script>
+        <script src="{% static "js/popper.min.js" %}"></script>
+        <script src="{% static "js/bootstrap.min.js" %}"></script>
+        <script src="{% static "js/kit.js" %}"></script>
+        <script src="{% static "js/aos.js" %}"></script>
+        <script src="{% static "js/main.js" %}"></script>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+        <script>
+            // Get the modal
+            modal = document.getElementById('myModal');
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            img = document.getElementById('myImg');
+            modalImg = document.getElementById("img01");
+            captionText = document.getElementById("caption");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            };
+
+            // Get the <span> element that closes the modal
+            span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            };
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+      </div>
+</body>
+</html>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#{% extends "webapp/header.html" %}#}
+{##}
+{#{% load staticfiles %}#}
+{##}
+{#{% block title %}Home{% endblock %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#    <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}">#}
+{##}
+{#    <style>#}
+{#    body {#}
+        {#background-image: url("https://www.planwallpaper.com/static/images/Beauty-of-nature-random-4884759-1280-800_nqwrrog.jpg");#}
+{#        background-image: url("https://get.pxhere.com/photo/forest-bridge-river-suspension-bridge-jungle-rainforest-habitat-natural-environment-nonbuilding-structure-52176.jpg");#}
+        {#background-image: url("http://www.mobileswall.com/wp-content/uploads/2015/12/640-wWater-Drop-Reflection-l.jpg");#}
+{#        background-color: #E6E4E9;#}
+{#        background-position: center;#}
+{#        background-repeat: no-repeat;#}
+{#        background-size: cover;#}
+{#        height: 100%;#}
+{#    }#}
+{#    </style>#}
+{#    <link href='https://fonts.googleapis.com/css?family=Ribeye' rel='stylesheet'>#}
+{#    <style>#}
+{#    #scroll {#}
+{#        font-family: 'Ribeye';font-size: 30px;#}
+{#    }#}
+{#    </style>#}
+{##}
+{#    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>#}
+{#    <span class="blinking" id="text1">WELCOME TO MY DJANGO APPLICATION PAGE</span>#}
+{##}
+{#    <marquee behavior="scroll" id="scroll" direction="left" scrollamount="12" >PLEASE CHOOSE APPROPRIATE ACTION FROM TOP MENU</marquee>#}
+{##}
+{#{% endblock %}#}
