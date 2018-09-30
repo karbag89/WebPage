@@ -1,0 +1,68 @@
+{% extends 'webapp/header.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Django Applications{% endblock %}
+
+{% block content %}
+    <link href='https://fonts.googleapis.com/css?family=Rock Salt' rel='stylesheet'>
+    <style>
+    h2 {
+        font-family: 'Rock Salt';font-size: 22px;
+    }
+    </style>
+    <br/>
+    <h2><strong><tt>Django Applications</tt></strong></h2><br/>
+    <link href='https://fonts.googleapis.com/css?family=Petit Formal Script' rel='stylesheet'>
+    <style>
+    #txt {
+        font-family: "Inconsolata", sans-serif; font-size: 22px;
+    }
+    </style>
+    <style>
+    #bt {
+        align-items: center;
+    }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Ribeye' rel='stylesheet'>
+    <style>
+    #label {
+        font-family: 'Ribeye';font-size: 22px;
+    }
+    </style>
+
+    <table style="border: 1px solid transparent">
+          <tr>
+            <td>
+                 <div class="card bg-transparent" style="border: 1px solid transparent; width: 300px;">
+                     <img class="card-img-top-center" style="width: 150px" src="https://cdn.worldvectorlogo.com/logos/who-wants-to-be-a-millionaire.svg" alt="Image not found!">
+                     <div class="card-body">
+                         <h5 class="card-title" id="label"><strong>Who Wants to Be a Millionaire?</strong></h5>
+                        <p class="card-text" id="txt">A group of contestants on each episode play a preliminary round called "Fastest Finger First". </p>
+                         <a  href="millionaire/" class="btn btn-primary" id="bt"><strong>Start Game</strong></a>
+                      </div>
+                    </div>
+            </td>
+              <td>
+                <div class="card bg-transparent" style="border: 1px solid transparent; width: 300px;">
+                    <img class="card-img-top" style="width: 150px" src="{% static "images/ATM.png" %}" alt="Image not found!">
+                    <div class="card-body">
+                        <h5 class="card-title" id="label"><strong>ATM</strong></h5>
+                        <p class="card-text" id="txt">ATM is an electronic telecommunications device that perform financial transactions.</p>
+                        <a href="atm/" class="btn btn-primary bg-success mb-3" id="bt"><strong>Start Transaction</strong></a>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="card bg-transparent" style="border: 1px solid transparent; width: 300px;">
+                    <img class="card-img-top" style="width: 140px" src="{% static "images/tic_tac_toe.png" %}" alt="Image not found!">
+                    <div class="card-body">
+                        <h5 class="card-title" id="label"><strong>Tic Tac Toe</strong></h5>
+                        <p class="card-text" id="txt"> The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.</p>
+                        <a href="tic_tac_toe/" class="btn btn-primary bg-warning mb-3" id="bt"><strong>Start Game</strong></a>
+                    </div>
+                </div>
+            </td>
+    </table>
+{#    {% include 'webapp/millionaire_included.html' %}#}
+{% endblock %}

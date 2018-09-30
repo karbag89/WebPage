@@ -1,0 +1,52 @@
+{% extends 'webapp/header.html' %}
+
+{% load staticfiles %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+    <html>
+  <head>
+    <meta charset="utf-8">
+    <title>About Page</title>
+{#    <link rel="stylesheet" href="{% static "css/home.css" %}"/>#}
+  </head>
+  <body>
+{#    <div class="progress">#}
+{#      <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>#}
+{#    </div>#}
+    </br>
+    <table>
+      <tr>
+        <td><img src="{% static "images/Bagrat.png" %}" width="450" height="450px" alt="Image not found!"></td>
+        <td> </td>
+        <td>
+          1. Team leader and Radio Frequency (RF) hardware and software design engineer at the
+          <a href="http://www.olympengineering.com/home.html"><strong>OLYMP Engineering LLC</strong></a> –
+          <a href="https://partners.ni.com/directory/partner/87333/olymp-engineering-llc"><strong>Silver Alliance Partner</strong></a>
+          company of the <a href="http://www.ni.com/ru-ru.html"><strong>National Instruments</strong></a> (NI) integrator organization.
+          <p></p>
+            2. Group leader including more than 15 members of various specialities (LabVIEW software developers, circuit developers,
+            constructors, quality assurance engineers, technical writers).
+            <p></p>
+            3. Article: Simulation of digital communication systems of linear codes Editors: H. Gomtsyan, B. Karyan
+                <br/> Accepted for publication by scientific journal «ВЕСТНИК РАУ»
+            <p></p>
+            4. Organized multiple meetings with my team members throughout the duration of the project.
+            <br/>In the meetings organized by me, the opinion of each member of the team is extremely important, since each thought can
+            contain important information about the project, depending on which side to look at.
+            <p></p>
+            <p></p>
+            <p></p>
+          </td>
+      </tr>
+    </table>
+    ->	Participated in various events, especially in the LabVIEW programmers summit which was conducted by <a href="http://www.ni.com/company/our-vision/leadership/kodosky.htm"><strong>Jeff Kodosky</strong></a>
+    himself (known as the Father of LabVIEW by engineers and scientists worldwide, Jeff Kodosky cofounded National Instruments in 1976.)
+    <br/> ->	LabVIEW software management courses, for control and estimate software developers team working in software development based on LabVIEW which was conducted by
+    <a href="https://www.linkedin.com/in/ladolcetta/"><strong>David Ladolcetta</strong></a> (LabVIEW Tools Network Staff Software Engineer & Product Manager).
+    <br/> ->	Project Management courses for scope time, cost, quality and manage risks throughout the project duration.
+
+  </body>
+</html>
+{% endblock %}

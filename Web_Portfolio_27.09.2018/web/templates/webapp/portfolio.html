@@ -1,0 +1,105 @@
+{% extends 'webapp/header.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+    <html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/portfolio.css" %}">
+  </head>
+  <body>
+{#    <div class="progress">#}
+{#      <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>#}
+{#    </div>#}
+    </br>
+    <table border="1">
+      <tr>
+        <td>
+          <div class="card" style="width: 1110px;">
+              <!-- <img src="{% static "images/Client1.png" %}" width="110" height="80px" alt="Image not found!"> -->
+              <!-- <img class="card-img-top" src="{% static "images/Cliet1.png" %}" width="110" height="80px" alt="Card image cap"> -->
+              <div class="card-body">
+                <h5 class="card-title">Python UDP group chat without threads</h5>
+                <p class="card-text">1. My Client wonted a Python script 'chat.py'
+                  such that when it is called with an argument, which must be an IP address of a server,
+                  it acts as a client, and when it is called without an argument, it acts as a server.
+                  The script provides a kind of a group chat. The client sends the keyboard input lines
+                  to the server via UDP (one packer per each input line). Whatever text the server receives
+                  from keyboard, it transmits the text to all its clients.
+                  2. I was develop 'chat.py' Python file, and its satisfy all requirements of Client.
+                  I use 'pynput' Python library and make a event for satisfy all requirements.
+                  3. Tested in 3 different Windows machines, from what 1-is a Server, and 2 and 3 was a Client.</p>
+                <a href="#" class="btn btn-primary">More</a>
+              </div>
+            </div>
+          </td>
+          <tr>
+            <td>
+              <div class="card" style="width: 1110px;">
+                  <!-- <img src="{% static "images/Client1.png" %}" width="110" height="80px" alt="Image not found!"> -->
+                  <!-- <img class="card-img-top" src="{% static "images/Cliet1.png" %}" width="110" height="80px" alt="Card image cap"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">GUI (receiving and transmitting packages via RF hardware's using VISA)</h5>
+                    <p class="card-text">1. Develop the GUI
+                    2. Control all RF hardware's connected to PC using VISA communication protocol.
+                    3. Develop the package coding and decoding for XBee hardware.</p>
+                    <a href="#" class="btn btn-primary">More</a>
+                  </div>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="card" style="width: 1110px;">
+                  <!-- <img src="{% static "images/Client1.png" %}" width="110" height="80px" alt="Image not found!"> -->
+                  <!-- <img class="card-img-top" src="{% static "images/Cliet1.png" %}" width="110" height="80px" alt="Card image cap"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">Ethernet (LAN) packet control</h5>
+                    <p class="card-text">I have develop LabVIEW FPGA code for controlling all
+                      Ethernet (LAN) packets using NI sbRIO-9606 (Embedded Device With LX45 FPGA,
+                      RIO Mezzanine Card Connector), and Ethernet controller ENC28J60 chip integrated
+                      in ENC28J60-H board via SPI interface in Full Duplex mode.
+                      Control SPI interface established from Host. From panel control interface user controls all Ethernet packets,
+                      read all Ethernet packets information, inserts or deletes specified packets and after that sends configured packet.</p>
+                    <a href="#" class="btn btn-primary">More</a>
+                  </div>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="card" style="width: 1110px;">
+                  <!-- <img src="{% static "images/Client1.png" %}" width="110" height="80px" alt="Image not found!"> -->
+                  <!-- <img class="card-img-top" src="{% static "images/Cliet1.png" %}" width="110" height="80px" alt="Card image cap"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">Radar Signals Laboratory</h5>
+                    <p class="card-text">❖ Device for forming and matched filtering of chirped pulse signals
+                        ❖ Device for forming and matched filtering of pulse signals with pseudorandom phase manipulation
+                        ❖ Device for forming and correlation processing of pulse signals with pseudorandom phase-manipulation
+                        ❖ Digital device for detection of the pack of coherent pulses on the background of passive interference
+                        ❖ Specialized processor for digital quasi-optimal processing of incoherent pulse signal packs
+                        ❖ Specialized processor for digital processing of the pack of incoherent radio pulses with stabilization of false alarm
+                        probability with the help of the modified signed detector
+                        The Radar signals laboratory has been developed as a tool for hands-on study of digital specialized processors (SP) for
+                        detecting and determining the angular position of the target in surveillance radars, using the incoherent sequence of radio pulses as a probing signal.
+                        The laboratory has been designed to demonstrate the possibility of designing and developing a multi-channel radar system, using a
+                        specialized processor, and for the introduction of time and amplitude sampling devices.</p>
+                    <a href="#" class="btn btn-primary">More</a>
+                  </div>
+                </div>
+            </td>
+          </tr>
+          <p></p>
+          <tr>
+
+          </tr>
+
+      </tr>
+    </table>
+
+  </body>
+</html>
+{% endblock %}

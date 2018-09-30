@@ -1,0 +1,94 @@
+/*body{*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+/*section{*/
+    /*width: 20%;*/
+    /*height: 20%;*/
+    /*font-size: 10px;*/
+    /*background: transparent;*/
+    /*box-sizing: border-box;*/
+    /*overflow: hidden;*/
+    /*position: absolute;*/
+/*}*/
+
+/*.wrapper{*/
+    /*width: 50%;*/
+    /*height: 100%;*/
+    /*background: transparent;*/
+    /*overflow: hidden;*/
+    /*color: #eaffee;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*border-right: 2px solid transparent;*/
+/*}*/
+
+/*.sliding {*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*white-space: nowrap;*/
+    /*font-size: 30px;*/
+    /*line-height: 220px;*/
+    /*overflow: hidden;*/
+    /*font-family: sans-serif;*/
+    /*animation: animate 15s linear infinite;*/
+/*}*/
+
+/*@keyframes animate {*/
+    /*0% {*/
+        /*transform: translate(0, -30%);*/
+    /*}*/
+    /*100% {*/
+        /*transform: translate(-50%);*/
+    /*}*/
+/*}*/
+
+#text1 {
+    font-size: 45px;
+    font-family: Courier New;
+    color: greenyellow;
+    width: 1500px;
+    margin-left: 50px;
+    margin-top: 200px;
+    margin-bottom: 70px;
+}
+
+.blinking {
+    animation: blinkingText 5s infinite;
+    /*font-size: 45px;*/
+    /*font-family: Courier New;*/
+    /*color: greenyellow;*/
+    /*width: 1500px;*/
+    /*margin-left: 0px;*/
+    /*margin-top: 400px;*/
+    /*margin-bottom: 70px;*/
+}
+
+@keyframes blinkingText {
+    0% { color: transparent;}
+    10% { color: transparent; }
+    30% { color: greenyellow; }
+    40% { color: greenyellow; }
+    50% { color: greenyellow; }
+    54% { color: greenyellow; }
+    58% { color: greenyellow; }
+    60% { color: greenyellow; }
+    70% { color: greenyellow; }
+    80% { color: greenyellow; }
+    90% { color: transparent; }
+    100% { color: transparent; }
+}
+
+#scroll {
+    text-blink: yes;
+    font-size: 35px;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    color: greenyellow;
+    text-justify: distribute-center-last;
+    width: 700px;
+    margin-left: 220px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    font-family: Arial;
+}
