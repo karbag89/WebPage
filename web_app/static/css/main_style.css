@@ -2853,7 +2853,9 @@ h1 small, .h1 small {
 }
 
 h2, .h2 {
-  font-size: 2.5em;
+  font-weight: bold;
+  /* font-style: italic; */
+  font-size: 1.45em;
   margin-bottom: 30px;
 }
 
@@ -2864,28 +2866,30 @@ h3, .h3 {
 }
 
 h4, .h4 {
+  font-weight: bold;
   font-size: 1.714em;
   line-height: 1.45em;
-  margin-top: 30px;
+  margin-top: px;
   margin-bottom: 15px;
 }
 
 h4 + .category,
 h4.title + .category, .h4 + .category,
 .h4.title + .category {
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 h5, .h5 {
-  font-size: 1.57em;
+  font-size: 1.90em;
   line-height: 1.4em;
   margin-bottom: 15px;
 }
 
 h6, .h6 {
-  font-size: 1em;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 1.3em;
+  line-height: 1.4em;
+  margin-bottom: 15px;
+  /* text-transform: uppercase; */
 }
 
 p {
@@ -7171,7 +7175,7 @@ Created using IcoMoon - icomoon.io
 
 /* Experience Style */
 .cc-experience .cc-experience-header {
-  padding-top: 60px;
+  padding-top: 35px;
   padding-right: 0;
   text-align: center;
   color: #fff;
@@ -7184,7 +7188,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .cc-education .cc-education-header {
-  padding-top: 60px;
+  padding-top: 40px;
   padding-right: 0;
   text-align: center;
   color: #fff;
